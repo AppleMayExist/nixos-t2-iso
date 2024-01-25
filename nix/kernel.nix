@@ -12,7 +12,7 @@ let
     hash = "sha256-6L5n1Yg2TDtdEjyeyjXlbNicS0ttwRcuMTaYRCaV1gI=";
   };
 
-  version = "6.7.1";
+  version = "6.7";
   majorVersion = with lib; (elemAt (take 1 (splitVersion version)) 0);
 in
 buildLinux (args // {
@@ -25,7 +25,7 @@ buildLinux (args // {
   src = runCommand "patched-source" {} ''
     cp -r ${fetchzip {
       url = "mirror://kernel/linux/kernel/v${majorVersion}.x/linux-${version}.tar.xz";
-      hash = "sha256-rkHYo59fDJOCTUdmR9Mp0nEikStmWzDCXNF8x8WRUeQ=";
+      hash = "sha256-HC/IOgHqZLBYZFiFPSSTFEbRDpCQ2ckTdBkOODAOTMc=";
     }} $out
     chmod -R u+w $out
     cd $out
