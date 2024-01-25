@@ -1,10 +1,12 @@
-{ pkgs, modulesPath, nixos-hardware, ... }:
+{ pkgs, lib, modulesPath, nixos-hardware, ... }:
 
 {
   imports = [
     "${modulesPath}/installer/cd-dvd/channel.nix"
     nixos-hardware.nixosModules.apple-t2
   ];
+
+  boot.kernelPackages = lib.mkForce (pkgs.linuxPackagesFor (pkgs.callPackage ./kernel.nix { }));
 
   nix.settings = {
     extra-substituters = [
