@@ -7,7 +7,7 @@
   ];
 
   nix.settings = {
-    trusted-substituters = [
+    extra-substituters = [
       "https://t2linux.cachix.org"
     ];
     trusted-public-keys = [
