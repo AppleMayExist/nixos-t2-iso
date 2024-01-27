@@ -22,7 +22,7 @@
     python3
   ];
 
-  boot.supportedFilesystems = lib.mkForce [ "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs" ];
+  boot.supportedFilesystems = lib.mkForce [ "bcachefs" "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs" ];
 
   # ZFS is (sometimes) broken and prevents building without this
   #nixpkgs.config.allowBroken = true;
